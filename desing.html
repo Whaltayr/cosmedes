@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Design Gráfico — Cosme Design</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+    <!-- optional: include your site navbar here -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="navbar-container container">
+                <a class="logo" href="index.html">Cosme Design</a>
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="design.html" aria-current="page">Design Gráfico</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-design">
+        <section class="hero-portfolio">
+            <div class="hero-inner">
+                <h1>Design Gráfico — Portfólio</h1>
+                <p class="lead">Seleção de trabalhos: identidades, impressão, campanhas e peças digitais. Clique em um
+                    projeto para ver mais.</p>
+            </div>
+        </section>
+
+        <!-- FILTERS (optional) -->
+        <section class="filters">
+            <div class="filter-row">
+                <button class="filter-btn active" data-filter="*">Todos</button>
+                <button class="filter-btn" data-filter="identidade">Identidade</button>
+                <button class="filter-btn" data-filter="impresso">Impresso</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="logo">Logo</button>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID -->
+        <section class="gallery" aria-label="Galeria de projetos">
+            <!-- each .item must have data-category and contains an img + caption -->
+            <!-- Replace src with your real project thumbnails -->
+            <article class="item" data-category="identidade" >
+                <img src="assets/fly/345028437_634270655272200_4016816765847362942_n.jpg" alt="Projeto 1 — Identidade">
+                <div class="meta">
+                    <h3>Identidade — Casa Verde</h3>
+                    <p>Logotipo e aplicação</p>
+                </div>
+            </article>
+
+            <article class="item" data-category="impresso" >
+                <img src="assets/fly/345297599_272114681956731_4744914714290787473_n.jpg" alt="Projeto 2 — Flyer">
+                <div class="meta">
+                    <h3>Flyer — Feira Local</h3>
+                    <p>Campanha impressa</p>
+                </div>
+            </article>
+
+            <article class="item" data-category="digital" >
+                <img src="assets/ins/Instagram_01.png" alt="Projeto 3 — Social">
+                <div class="meta">
+                    <h3>Série Social — Lançamento</h3>
+                    <p>Templates para redes</p>
+                </div>
+            </article>
+
+            <article class="item" data-category="identidade" >
+                <img src="assets/ins/Instagram_02.png" alt="Projeto 4 — Packaging">
+                <div class="meta">
+                    <h3>Packaging — Aroma</h3>
+                    <p>Rótulo e mockups</p>
+                </div>
+            </article>
+
+            <article class="item" data-category="logo" >
+                <img src="assets/logo/Eco-viva_05.png" alt="Projeto 5 — Brochura">
+                <div class="meta">
+                    <h3>Brochura — Portfólio</h3>
+                    <p>Material corporativo</p>
+                </div>
+            </article>
+
+            <article class="item" data-category="logo" >
+                <img src="assets/logo/Eco-viva_04.png" alt="Projeto 6 — Banner">
+                <div class="meta">
+                    <h3>Banner — Campanha</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+
+
+            <article class="item" data-category="logo">
+                <img src="assets/ser/Sky-motor-presentation_03.png" alt="Projeto 7 — Banner">
+                <div class="meta">
+                    <h3>Banner — Campanha</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="logo" >
+                <img src="assets/ser/Sky-motor-presentation_02.png" alt="Projeto 8 — Banner">
+                <div class="meta">
+                    <h3>Banner — Campanha</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+                      <article class="item" data-category="logo" >
+                <img src="assets/logo/Propost-a2-Dia-do-professor-eliangela-filomena.png" alt="Projeto 9 — Banner">
+                <div class="meta">
+                    <h3>Banner — Campanha</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+                      <article class="item" data-category="logo" >
+                <img src="assets/fly/348327741_755859649621205_3915545136306085145_n.jpg" alt="Projeto 10 — Banner">
+                <div class="meta">
+                    <h3>Banner — Campanha</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- LIGHTBOX (hidden initially) -->
+        <div id="lightbox" aria-hidden="true">
+            <button id="lb-close" aria-label="Fechar">×</button>
+            <button id="lb-prev" class="nav" aria-label="Anterior">‹</button>
+            <button id="lb-next" class="nav" aria-label="Próximo">›</button>
+            <div id="lb-stage" role="dialog" aria-modal="true">
+                <img id="lb-image" src="" alt="">
+                <div id="lb-caption"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- footer (reuse your existing footer)
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Cosme Design</h2>
+        <p>Transformamos ideias em arte visual.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="design.html">Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:cosmedesign@gmail.com">cosmedesign@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span id="year"></span> Cosme Design</p></div>
+  </footer> -->
+
+<!-- Simples: substituir o <script> atual por este (cole no fim do <body>) -->
+
+<script>(() => {
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+  // Elementos
+  const items = $$('.gallery .item');
+  const lightbox = $('#lightbox');
+  const lbImage = $('#lb-image');
+  const lbCaption = $('#lb-caption');
+  const lbClose = $('#lb-close');
+  const lbNext = $('#lb-next');
+  const lbPrev = $('#lb-prev');
+
+  let current = -1;
+
+  // Abre lightbox no índice i
+  function openAt(i) {
+    const item = items[i];
+    if (!item) return;
+    const img = item.querySelector('img');
+    const full = item.dataset.full || img.src;
+    const title = item.querySelector('.meta h3').textContent;
+    const subtitle = item.querySelector('.meta p').textContent;
+
+    lbImage.src = full;
+    lbImage.alt = title;
+    lbCaption.innerHTML = `<strong>${title}</strong><div class="sub">${subtitle}</div>`;
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lbClose.focus();
+
+    current = i;
+  }
+
+  function closeLB() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImage.src = '';
+    current = -1;
+  }
+
+  function next() { openAt((current + 1) % items.length); }
+  function prev() { openAt((current - 1 + items.length) % items.length); }
+
+  // Bind clicks e teclado
+  items.forEach((item, idx) => {
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('click', () => openAt(idx));
+    item.addEventListener('keydown', e => { if (e.key === 'Enter') openAt(idx); });
+  });
+
+  lbClose.addEventListener('click', closeLB);
+  lbNext.addEventListener('click', e => { e.stopPropagation(); next(); });
+  lbPrev.addEventListener('click', e => { e.stopPropagation(); prev(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLB();
+  });
+
+  // Filtros
+  const filterBtns = $$('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      items.forEach(it => {
+        it.style.display = (f === '*' || it.dataset.category === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // Stagger + animação ao aparecer
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach((el, i) => {
+    el.style.setProperty('--delay', i * 60 + 'ms');
+    io.observe(el);
+  });
+})();
+</script>
+
+
+
+</body>
+
+</html>
