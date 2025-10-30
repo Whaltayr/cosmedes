@@ -9,8 +9,17 @@
   --font-title: "DM Sans", sans-serif;
   --font-body: "Lato", sans-serif;
 }
-* {
+/*imported fonts*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  scroll-behavior: smooth;
   box-sizing: border-box;
+  font-family: var(--font-body);
 }
 html,
 body {
@@ -27,30 +36,122 @@ body {
   padding: 1.25rem;
 }
 
-/* Header minimal */
-.site-header {
+/*============NavBar=====================*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 2rem;
   background: transparent;
-  padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--font-color);
+  text-decoration: none;
 }
 .navbar-container {
+  width: 100%;
+  max-width: 1600px;
   display: flex;
+  padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
 }
-.logo {
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--dark);
-}
-.navbar-menu {
-  list-style: none;
+.navbar-container .navbar-menu {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.3rem;
+  list-style: none;
 }
-.navbar-menu a {
+.navbar-container .navbar-menu li a:not(.cta-link) {
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-size: clamp(0.95rem, 1.2vw + 0.4rem, 1.125rem);
+  letter-spacing: 0.2px;
+}
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--size-10);
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: var(--dark);
+  transition: all 0.3s ease-in-out;
+}
+.navbar-menu > li > .cta-link {
   text-decoration: none;
   color: var(--dark);
-  font-weight: 600;
+  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: var(--primary-color);
+  padding: 0.6rem 1.4rem;
+  border-radius: 40px;
+}
+@media (max-width: 800px) {
+  .navbar {
+    backdrop-filter: none;
+  }
+  .navbar-container .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+    gap: 1.7rem !important;
+    width: 250px;
+    height: 100vh;
+    padding: 5rem 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-toggle {
+    display: block;
+    z-index: 101;
+  }
+  .navbar-container .navbar-menu.active {
+    display: flex;
+  }
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+@media (width<480px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+  .navbar-container .navbar-menu li a {
+    font-size: 1rem;
+  }
+  .advantages-image {
+    display: none;
+  }
 }
 
 /* HERO */

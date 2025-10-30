@@ -5,211 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Sobre — Cosme Design</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos específicos para a página Sobre (escopo .about-page) */
-        .about-hero {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.00));
-            padding: 4rem 1rem;
-            border-radius: var(--border-radius);
-            margin: 1rem;
-            box-shadow: var(--box-shadow);
-        }
+    <link rel="stylesheet" href="about.css">
+    <script src="gallery.js" defer></script>
 
-        .about-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-            display: grid;
-            gap: 2rem;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 420px;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about-text h1 {
-            font-family: var(--font-title);
-            font-size: clamp(1.6rem, 4vw, 2.6rem);
-            margin-bottom: .6rem;
-            color: var(--font-color);
-        }
-
-        .about-text p.lead {
-            color: var(--font-color);
-            font-weight: 300;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            max-width: 70ch;
-        }
-
-        .pill {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: .35rem .75rem;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: .9rem;
-        }
-
-        /* Missão / Visão / Valores */
-        .mv-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .mv-card {
-            background: #fff;
-            color: var(--dark-color);
-            padding: 1.25rem;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .mv-card h3 {
-            font-family: var(--font-title);
-            margin-bottom: .5rem;
-        }
-
-        .mv-card p {
-            font-weight: 300;
-            line-height: 1.5;
-        }
-
-        /* Equipe */
-        .team {
-            margin-top: 2rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 350px));
-            gap: 3rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .member {
-            background: #fff;
-            color: var(--dark-color);
-            padding: 1rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-        }
-
-        .member img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: .75rem;
-        }
-
-        .member h4 {
-            margin: 0 0 .25rem;
-            font-family: var(--font-title);
-        }
-
-        .member p {
-            margin: 0;
-            font-weight: 300;
-            font-size: .95rem;
-            color: #444;
-        }
-
-        /* Processo / Timeline */
-        .process {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .step {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            background: #fff;
-            color: var(--dark-color);
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .step .num {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-        }
-
-        .step h4 {
-            margin: 0;
-            font-family: var(--font-title);
-        }
-
-        .step p {
-            margin: 0;
-            font-weight: 300;
-            color: #333;
-        }
-
-        /* CTA interno */
-        .about-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            margin-top: 1.5rem;
-            
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: #fff;
-            padding: .75rem 1.25rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: var(--box-shadow);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--font-color);
-            padding: .6rem 1rem;
-            border-radius: 40px;
-            border: 1px solid rgba(0, 0, 0, 0.432);
-            text-decoration: none;
-        }
-
-        /* rodapé pequeno ajuste para a página */
-        @media (max-width:980px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mv-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-cta {
-                flex-wrap: wrap;
-                align-items: start;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -224,7 +22,7 @@
                 <ul class="navbar-menu">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="about.html" aria-current="page">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="desing.html">Projetos</a></li>
                     <li><a class="cta-link" href="#contato">Fale Conosco</a></li>
                 </ul>
             </div>
@@ -237,7 +35,7 @@
             <div class="about-inner">
                 <div class="about-grid">
                     <div class="about-text">
-                   
+
                         <h1>Design com estratégia, resultados com alma</h1>
                         <p class="lead">Na Cosme Design transformamos ideias em experiências visuais que geram reação —
                             não apenas estética. Unimos estratégia, técnica e sensibilidade para criar marcas, campanhas
@@ -251,7 +49,7 @@
                     </div>
 
                     <div class="about-visual" aria-hidden="true">
-                        <img src="assets/img/about.jpg" alt="Ilustração Cosme Design"
+                        <img src="assets/ins/Instagram_04.png" alt="Ilustração Cosme Design"
                             style="width:100%; border-radius:12px; object-fit:cover; height:320px;">
                     </div>
                 </div>
@@ -283,35 +81,47 @@
                 Nosso processo</h2>
 
             <div class="step">
-                <div class="num">1</div>
-                <div>
+                <div class="step-title">
+                    <h4 class="num">1</h4>
                     <h4>Descoberta</h4>
+                </div>
+
+                <div>
                     <p>Reunião inicial, briefing detalhado e pesquisa de mercado para entender objetivos e público-alvo.
                     </p>
                 </div>
             </div>
 
             <div class="step">
-                <div class="num">2</div>
-                <div>
+                <div class="step-title">
+                    <h4 class="num">2</h4>
                     <h4>Estratégia</h4>
+                </div>
+                <div>
+
                     <p>Plano de posicionamento, mensagens-chave e definição das entregas com prazos claros.</p>
                 </div>
             </div>
 
             <div class="step">
-                <div class="num">3</div>
-                <div>
+                <div class="step-title">
+                    <h4 class="num">3</h4>
                     <h4>Design & Prototipagem</h4>
+                </div>
+                <div>
+
                     <p>Criação de identidade, peças e protótipos — feedback rápido e iterações focadas em resultados.
                     </p>
                 </div>
             </div>
 
             <div class="step">
-                <div class="num">4</div>
-                <div>
+                <div class="step-title">
+                    <h4 class="num">4</h4>
                     <h4>Implementação</h4>
+                </div>
+                <div>
+
                     <p>Desenvolvimento, testes e lançamento com acompanhamento pós-entrega para garantir performance.
                     </p>
                 </div>
@@ -329,12 +139,12 @@
 
 
                 <article class="member">
-                    <img src="assets/img/team-4.jpg" alt="Foto — Designer">
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387" alt="Foto — Designer">
                     <h4>Emanuel Mateus</h4>
                     <p>Design Gráfico — identidade, impressos e direcção visual.</p>
                 </article>
                 <article class="member">
-                    <img src="assets/img/team-2.jpg" alt="Foto — Desenvolvedor">
+                    <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=399" alt="Foto — Desenvolvedor">
                     <h4>Josivaldo de Vasconcelos</h4>
                     <p>Desenvolvedor Web — front-end, performance e acessibilidade.</p>
                 </article>
@@ -377,7 +187,7 @@
                         receba um plano inicial gratuito para o seu projeto.</p>
                 </div>
 
-                <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="btn-container">
                     <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
                     <a href="https://wa.me/264812345678" class="btn-ghost" target="_blank" rel="noopener">Falar no
                         WhatsApp</a>
