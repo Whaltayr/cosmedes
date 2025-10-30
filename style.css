@@ -323,6 +323,8 @@ button.control {
   margin-bottom: 2rem;
   font-family: var(--font-title);
   font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: 1px;
 }
 
 .services-group {
@@ -396,6 +398,10 @@ button.control {
   line-height: 1.5;
   letter-spacing: 1px;
 }
+.service-card{
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* ===== CTA SECTION (flex - responsiva) ===== */
 .cta-section {
@@ -448,6 +454,8 @@ button.control {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin: 0 0 0.5rem 0;
   color: var(--font-color);
+  line-height: 1;
+  letter-spacing: 1px;
 }
 
 .cta-section p {
@@ -473,6 +481,7 @@ button.control {
   justify-content: center;
   text-decoration: none;
   padding: 0.75rem 1.25rem;
+  letter-spacing: 1px;
   border-radius: 40px;
   font-weight: 700;
   cursor: pointer;

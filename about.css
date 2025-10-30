@@ -17,7 +17,6 @@
 *::after {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: var(--font-body);
@@ -30,7 +29,7 @@ body {
 main {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -183,6 +182,7 @@ main {
 .about-text h1 {
   font-family: var(--font-title);
   font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1;
   margin-bottom: 0.6rem;
   color: var(--font-color);
 }
@@ -193,6 +193,14 @@ main {
   line-height: 1.6;
   margin-bottom: 1rem;
   max-width: 70ch;
+}
+
+/* mover estilo inline da imagem hero para classe */
+.about-visual-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 320px;
 }
 
 .pill {
@@ -232,8 +240,9 @@ main {
 }
 
 /* Equipe */
-.team {
+.container-team {
   margin-top: 2rem;
+  padding: 0 3rem;
 }
 
 .team-grid {
@@ -242,6 +251,19 @@ main {
   gap: 3rem;
   align-items: center;
   justify-content: center;
+}
+
+/* remover estilos inline das tags de team e aplicar aqui */
+.team-title {
+  font-family: var(--font-title);
+  color: var(--font-color);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin: 0 0 1rem;
+}
+.team-lead {
+  color: var(--font-color);
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
 .member {
@@ -273,56 +295,227 @@ main {
   color: #444;
 }
 
-/* Processo / Timeline */
+/* PROCESSO — moderno, com linha real e badges SVG */
 .process {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
+  margin-top: 2.5rem;
+  background-color: #90a0ff;
+  padding: 2rem 4rem;
+  min-height: 30rem;
+}
+.process h2 {
+  font-family: var(--font-title);
+  color: var(--font-color);
+  margin-bottom: 1rem;
+}
+
+/* container timeline */
+.process-timeline {
+  position: relative;
+  display: grid;
   gap: 1rem;
 }
 
+/* timeline line (elemento real) */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 48px;
+  bottom: 48px;
+  width: 6px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.03));
+  border-radius: 8px;
+  transform-origin: top center;
+  z-index: 1;
+}
+
+/* step card */
 .step {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  gap: 1rem;
-  align-items: flex-start;
-  background: #fff;
-  color: var(--dark-color);
+  gap: 0.6rem;
   padding: 1rem;
   border-radius: 12px;
+  background: #fff;
   box-shadow: var(--box-shadow);
-}
-.step .step-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  color: var(--dark-color);
+  overflow: hidden;
+  transform-origin: center;
 }
 
-.step .num {
-  min-width: 44px;
-  height: 44px;
+/* head layout */
+.step .step-head {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.badge {
+  position: relative;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  flex-shrink: 0;
+}
+.badge .icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  stroke: #fff;
+}
+.badge .num {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.step h4 {
+/* text */
+.step .text h3 {
   margin: 0;
   font-family: var(--font-title);
+  font-size: 1.05rem;
+}
+.step .text p {
+  margin: 0.2rem 0 0;
+  color: #4b4b4b;
+  font-weight: 300;
+}
+.step .detail {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
 }
 
-.step p {
-  margin: 0;
-  font-weight: 300;
-  color: #333;
+/* hover */
+.step:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.08);
+  transition: transform 0.28s, box-shadow 0.28s;
+}
+
+/* Desktop: horizontal with four columns */
+@media (min-width: 900px) {
+  .process-timeline {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem 0;
+    align-items: start;
+  }
+  .step {
+    min-height: 180px;
+  }
+  /* center badges over the central line */
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .step-head {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .step .text p {
+    max-width: 22ch;
+  }
+  .badge {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 899px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .timeline-line {
+    display: none;
+  } /* line hidden on small screens for clarity */
+  .step {
+    text-align: left;
+  }
+  .badge .num {
+    right: -6px;
+    bottom: -6px;
+  }
+}
+
+.container-impact {
+  margin-top: 2rem;
+  padding: 0 3rem;
+}
+
+#impacto-title {
+  font-family: var(--font-title);
+  color: var(--font-color);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin: 0 0 1rem;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 300px));
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.stat {
+  background: #fff;
+  color: var(--dark-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+.stat-value h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.stat-label h3 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #555;
 }
 
 /* CTA interno */
+.cta-inner {
+  background-color: #94da97;
+  padding: 2rem 3rem;
+}
+.cta-inner .cta-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+  color: var(--font-color);
+}
+.cta-inner .cta-lead {
+  color: var(--font-color);
+  font-weight: 300;
+  margin: 0.5rem 0 1rem;
+  max-width: 70ch;
+}
 .about-cta {
   display: flex;
   gap: 1rem;
@@ -336,6 +529,7 @@ main {
   padding: 0.75rem 1.25rem;
   border-radius: 40px;
   text-decoration: none;
+  letter-spacing: 1px;
   font-weight: 700;
   box-shadow: var(--box-shadow);
 }
@@ -343,8 +537,10 @@ main {
 .btn-ghost {
   background: transparent;
   color: var(--font-color);
+  letter-spacing: 1px;
   padding: 0.6rem 1rem;
   border-radius: 40px;
+  font-weight: 700;
   border: 1px solid rgba(0, 0, 0, 0.432);
   text-decoration: none;
 }
