@@ -156,7 +156,7 @@ body {
 
 /* HERO */
 .hero-portfolio {
-  background: linear-gradient(180deg, rgba(69, 97, 33, 0.082), rgba(70, 116, 9, 0.288));
+  background-color: #fff;
   padding: 2rem;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
