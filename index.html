@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Minimal Working Slider</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
 
@@ -15,14 +15,15 @@
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="index.html" class="logo">Logo</a>
+                <a href="index.html" class="logo"><img src="assets/img/Logo.png" alt=""></a>
                 <button class="navbar-toggle">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
                 <ul class="navbar-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active-link" href="index.html">Início</a></li>
                     <li><a href="about.html">Sobre</a></li>
                     <li><a href="projetos.html">Projetos</a></li>
+                       <li><a href="sites.html">websites</a></li>
                     <li><a class="cta-link" href="#">Fale Conosco</a></li>
                 </ul>
 
@@ -33,8 +34,8 @@
     <main>
         <section class="hero" aria-label="Hero">
             <div class="left-panel">
-                <h1 class="hero-title">Cosme Design</h1>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facilis cumque eum.</h3>
+                <h1 class="hero-title">Crie uma presença digital que conte sua história e inspire confiança.</h1>
+                <h3>Design estratégico, performance e identidade visual que fazem sua marca ser lembrada.</h3>
                 <a href="#">Fale Conosco</a>
             </div>
             <div class="right-panel" id="sliderRoot">
@@ -72,7 +73,7 @@
                     <p>Estratégias inteligentes para aumentar sua presença online.</p>
                 </a>
 
-                <a href="projetos.html" class="service-card" style="grid-area: service-4;">
+                <a href="projetos.html" class="service-card service-card-web" style="grid-area: service-4;">
                     <img class="card-icon" src="assets/icon/computer-svgrepo-com.svg" alt="">
                     <h2>Criação de Sites</h2>
                     <p>Websites modernos, rápidos e pensados para converter clientes.</p>

@@ -4,23 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Design Gráfico — Cosme Design</title>
+    <title>Projetos</title>
     <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="variables.css">
 </head>
 
 <body>
     <!-- optional: include your site navbar here -->
-   <header>
+    <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="index.html" class="logo">Logo</a>
+                <a href="index.html" class="logo"><img src="assets/img/Logo.png" alt=""></a>
                 <button class="navbar-toggle">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
                 <ul class="navbar-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Início</a></li>
                     <li><a href="about.html">Sobre</a></li>
-                    <li><a href="desing.html">Projetos</a></li>
+                    <li><a class="active-link" href="projetos.html">Projetos</a></li>
                     <li><a class="cta-link" href="#">Fale Conosco</a></li>
                 </ul>
 
@@ -45,6 +46,7 @@
                 <button class="filter-btn" data-filter="identidade">Identidade</button>
                 <button class="filter-btn" data-filter="impresso">Impresso</button>
                 <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="post">Post</button>
                 <button class="filter-btn" data-filter="logo">Logo</button>
             </div>
         </section>
@@ -53,80 +55,116 @@
         <section class="gallery" aria-label="Galeria de projetos">
             <!-- each .item must have data-category and contains an img + caption -->
             <!-- Replace src with your real project thumbnails -->
-            <article class="item" data-category="identidade" >
+            <article class="item" data-category="identidade">
                 <img src="assets/fly/fly3.jpg" alt="Projeto 1 — Identidade">
                 <div class="meta">
-                    <h3>Identidade — Casa Verde</h3>
+                    <h3>Tia Ary Fast Food</h3>
                     <p>Logotipo e aplicação</p>
                 </div>
             </article>
 
-            <article class="item" data-category="impresso" >
+            <article class="item" data-category="impresso">
                 <img src="assets/fly/fly1.jpg" alt="Projeto 2 — Flyer">
                 <div class="meta">
-                    <h3>Flyer — Feira Local</h3>
+                    <h3>Tia Ary Fast Food</h3>
                     <p>Campanha impressa</p>
                 </div>
             </article>
-
-            <article class="item" data-category="digital" >
-                <img src="assets/ins/Instagram_01.png" alt="Projeto 3 — Social">
+            <article class="item" data-category="logo">
+                <img src="assets/fly/fly6.jpg" alt="Projeto 3 — Banner">
                 <div class="meta">
-                    <h3>Série Social — Lançamento</h3>
-                    <p>Templates para redes</p>
+                    <h3>Tia Ary Fast Food</h3>
+                    <p>Peças digitais</p>
                 </div>
             </article>
 
-            <article class="item" data-category="identidade" >
-                <img src="assets/ins/Instagram_02.png" alt="Projeto 4 — Packaging">
+
+
+            <article class="item" data-category="identidade">
+                <img src="assets/ins/Instagram_02.png" alt="Projeto 5 — Packaging">
                 <div class="meta">
-                    <h3>Packaging — Aroma</h3>
-                    <p>Rótulo e mockups</p>
+                    <h3>Tabernáculo Internacional da Fé</h3>
+                    <p>Logotipo e aplicação</p>
                 </div>
             </article>
 
-            <article class="item" data-category="logo" >
-                <img src="assets/logo/Eco-viva_05.png" alt="Projeto 5 — Brochura">
+            <article class="item" data-category="logo">
+                <img src="assets/logo/Eco-viva_05.png" alt="Projeto 6 — Brochura">
                 <div class="meta">
-                    <h3>Brochura — Portfólio</h3>
+                    <h3>Eco Viva </h3>
                     <p>Material corporativo</p>
                 </div>
             </article>
 
-            <article class="item" data-category="logo" >
-                <img src="assets/logo/Eco-viva_04.png" alt="Projeto 6 — Banner">
+            <article class="item" data-category="logo">
+                <img src="assets/logo/Eco-viva_04.png" alt="Projeto 7 — Banner">
                 <div class="meta">
-                    <h3>Banner — Campanha</h3>
-                    <p>Peças digitais</p>
+                    <h3>Eco Viva</h3>
+                    <p>Identidade Logotipo</p>
                 </div>
             </article>
 
 
             <article class="item" data-category="logo">
-                <img src="assets/ser/Sky-motor-presentation_03.png" alt="Projeto 7 — Banner">
+                <img src="assets/ser/Sky-motor-presentation_03.png" alt="Projeto 8 — Banner">
+                <div class="meta">
+                    <h3>Sky motor</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="logo">
+                <img src="assets/ser/Sky-motor-presentation_02.png" alt="Projeto 9 — Banner">
+                <div class="meta">
+                    <h3>Sky motor</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="logo">
+                <img src="assets/logo/Propost-a2-Dia-do-professor-eliangela-filomena.png" alt="Projeto 10 — Banner">
                 <div class="meta">
                     <h3>Banner — Campanha</h3>
                     <p>Peças digitais</p>
                 </div>
             </article>
-            <article class="item" data-category="logo" >
-                <img src="assets/ser/Sky-motor-presentation_02.png" alt="Projeto 8 — Banner">
+            <article class="item" data-category="logo">
+                <img src="assets/fly/Post 4.png" alt="Projeto 11 — Banner">
                 <div class="meta">
-                    <h3>Banner — Campanha</h3>
+                    <h3>Esma Store</h3>
                     <p>Peças digitais</p>
                 </div>
             </article>
-                      <article class="item" data-category="logo" >
-                <img src="assets/logo/Propost-a2-Dia-do-professor-eliangela-filomena.png" alt="Projeto 9 — Banner">
+            <article class="item" data-category="identidade">
+                <img src="assets/fly/17-de-Setembro.png" alt="Projeto 12 — Banner">
                 <div class="meta">
-                    <h3>Banner — Campanha</h3>
+                    <h3>Ópticas Tulipa</h3>
                     <p>Peças digitais</p>
                 </div>
             </article>
-                      <article class="item" data-category="logo" >
-                <img src="assets/fly/fly6.jpg" alt="Projeto 10 — Banner">
+            <article class="item" data-category="digital">
+                <img src="assets/fly/op-tulipa.png" alt="Projeto 13 — Banner">
                 <div class="meta">
-                    <h3>Banner — Campanha</h3>
+                    <h3>Ópticas Tulipa</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="digital">
+                <img src="assets/fly/central-auto.png" alt="Projeto 14 — Banner">
+                <div class="meta">
+                    <h3>Central Automóvel</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="identidade">
+                <img src="assets/fly/Post-CarchPrancheta-1-copiar.png" alt="Projeto 15 — Banner">
+                <div class="meta">
+                    <h3>CARH</h3>
+                    <p>Peças digitais</p>
+                </div>
+            </article>
+            <article class="item" data-category="post">
+                <img src="assets/fly/IMG_1158.PNG" alt="Projeto 15 — Banner">
+                <div class="meta">
+                    <h3>SALES FAST</h3>
                     <p>Peças digitais</p>
                 </div>
             </article>
@@ -147,7 +185,7 @@
 
 
     <script src="nav.js"></script>
-<script src="gallery.js"></script>
+    <script src="gallery.js"></script>
 
 
 </body>
