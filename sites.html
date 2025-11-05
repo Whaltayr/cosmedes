@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,29 +9,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body class="site">
 
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Cosme Design — Página inicial"><img src="assets/img/Logo.png" alt=""></a>
+<header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/Logo.png" alt="Cosme Design — Logo">
+      </a>
 
-      <nav class="main-nav" role="navigation" aria-label="Menu principal">
-        <ul class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="about.html">Sobre</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="#contato" class="btn-ghost">Fale Conosco</a></li>
-        </ul>
-      </nav>
+      <button class="navbar-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <ul id="main-menu" class="navbar-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">Início</a></li>
+        <li role="none"><a role="menuitem" href="about.html">Sobre</a></li>
+        <li role="none"><a role="menuitem"  href="projetos.html">Projetos</a></li>
+        <li role="none"><a role="menuitem" class="active-link" href="sites.html">Websites</a></li>
+        <li role="none"><a role="menuitem" class="cta-link" href="#">Fale Conosco</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
+</header>
+
 
   <main id="main" class="main">
     <!-- HERO -->
     <section class="hero container" aria-label="Hero — Criação de Websites">
       <div class="hero-left">
         <h1 class="hero-title">Websites que comunicam. Conversões que contam.</h1>
-        <p class="hero-sub">Design minimalista, código eficiente e foco em resultados — criamos sites rápidos, responsivos e otimizados para transformar visitantes em clientes.</p>
+        <p class="hero-sub">Design minimalista, código eficiente e foco em resultados — criamos sites rápidos,
+          responsivos e otimizados para transformar visitantes em clientes.</p>
 
         <div class="hero-ctas">
           <a href="#contact" class="btn-primary">Quero um orçamento</a>
@@ -148,58 +159,63 @@
         </div>
 
         <div class="cta-actions">
-          <a class="btn-primary large" href="mailto:cosmedesign@gmail.com?subject=Orçamento%20Website">Quero meu orçamento</a>
+          <a class="btn-primary large" href="mailto:cosmedesign@gmail.com?subject=Orçamento%20Website">Quero meu
+            orçamento</a>
           <a class="btn-outline" href="https://wa.me/264812345678" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
   </main>
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h2>Cosme Design</h2>
-      <p>Transformamos ideias em arte visual — design, branding e criação de websites que conectam marcas e pessoas.</p>
-    </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Cosme Design</h2>
+        <p>Transformamos ideias em arte visual — design, branding e criação de websites que conectam marcas e pessoas.
+        </p>
+      </div>
 
-    <div class="footer-links">
-      <h3>Links Rápidos</h3>
-      <ul>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="about.html">Sobre Nós</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
 
-    <div class="footer-contact">
-      <h3>Contato</h3>
-      <ul>
-        <li>Email: <a href="mailto:cosmedesign@gmail.com">cosmedesign@gmail.com</a></li>
-        <li>Telefone: <a href="tel:+264812345678">+264 81 234 5678</a></li>
-        <li>Localização: Windhoek, Namíbia</li>
-      </ul>
-    </div>
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <ul>
+          <li>Email: <a href="mailto:cosmedesign@gmail.com">cosmedesign@gmail.com</a></li>
+          <li>Telefone: <a href="tel:+264812345678">+264 81 234 5678</a></li>
+          <li>Localização: Windhoek, Namíbia</li>
+        </ul>
+      </div>
 
-    <div class="footer-social">
-      <h3>Redes Sociais</h3>
-      <div class="social-icons">
-        <a href="#" aria-label="Instagram"><img src="assets/icon/instagram-svgrepo-coml.svg" alt=""></a>
-        <a href="#" aria-label="Facebook"><img src="assets/icon/facebook-svgrepo-com.svg" alt=""></a>
-        <a href="#" aria-label="Twitter"><img src="assets/icon/twitter-svgrepo-com (1).svg" alt=""></a>
-        <a href="#" aria-label="Behance"><img src="assets/icon/tiktok-svgrepo-com (1).svg" alt=""></a>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><img src="assets/icon/instagram-svgrepo-coml.svg" alt=""></a>
+          <a href="#" aria-label="Facebook"><img src="assets/icon/facebook-svgrepo-com.svg" alt=""></a>
+          <a href="#" aria-label="Twitter"><img src="assets/icon/twitter-svgrepo-com (1).svg" alt=""></a>
+          <a href="#" aria-label="Behance"><img src="assets/icon/tiktok-svgrepo-com (1).svg" alt=""></a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <p>&copy; <span id="year"></span> Cosme Design. Todos os direitos reservados.</p>
-  </div>
-</footer>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Cosme Design. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
 
   <script>
     // atualiza ano
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+     <script src="nav.js"></script>
 </body>
+
 </html>
