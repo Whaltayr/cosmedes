@@ -1,57 +1,79 @@
+/* websites.css — versão corrigida e responsiva
+   Substitua o conteúdo atual por este arquivo (apenas CSS).
+*/
+
+/* ---------- Root variables ---------- */
 :root {
-  --primary-cqolor: #4caf50;
+  /* Colors */
+  --primary-color: hsl(189 100% 30%);
+  --accent: #4caf50;
   --secondary-color: #ff9800;
   --dark-color: #121212;
-  --font-color: #333;
+  --font-color: #111;
+  --muted: #6b7280;
   --background-color: #f5f5f5;
 
-  --primary-color: hsl(225, 100%, 17%);
-  --color2-d: hsl(225, 100%, 25%);
-  --color3-d: hsl(225, 100%, 35%);
+  /* Light/dark palettes (kept for compatibility) */
+  --color2-d: hsl(225 100% 25%);
+  --color3-d: hsl(225 100% 35%);
+  --color1-l: hsl(189 100% 90%);
+  --color2-l: hsla(189 100% 50% / 0.897);
+  --color3-l: hsl(189 100% 40%);
+  --color5-l: hsl(189 100% 20%);
 
-  --color1-l: hsl(189, 100%, 90%);
-  --color2-l: hsla(189, 100%, 50%, 0.897);
-  --color3-l: hsl(189, 100%, 40%);
-  --primary-color: hsl(189, 100%, 30%);
-  --color5-l: hsl(189, 100%, 20%);
-  /*space between elemenst*/
-  --space: 12px;
-  --space: 14px;
-  --space: 18px;
-  --space: 20px;
-  --space: 28px;
-  --space: 36px;
-  --space: 48px;
-  /*gaps*/
-  --gap-1: 1rem;
+  /* Spacing scale */
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 18px;
+  --space-lg: 28px;
+  --space-xl: 48px;
+
+  --gap: 1.25rem;
   --gap-2: 2rem;
   --gap-3: 3rem;
   --gap-4: 4rem;
-  --gap-5: 5rem;
 
   --border-radius: 12px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --font-title: DM Sans, sans-serif;
-  --font-body: Lato, sans-serif;
-}
-/*imported fonts*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+  /* Typography */
+  --font-title: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --font-body: "Lato", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+/* ---------- Fonts (kept via import since only CSS is changed) ---------- */
+/* If you later move font links to <head> it's better for performance */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lato:wght@300;400;700&display=swap");
+
+/* ---------- Global reset & base ---------- */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
-  scroll-behavior: smooth;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-body);
 }
+
+html,
 body {
-  background-color: #f5f5f5;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
   color: var(--font-color);
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ---------- Layout container ---------- */
 main {
   max-width: 1500px;
   margin: 0 auto;
@@ -60,7 +82,8 @@ main {
   flex-direction: column;
   gap: 4rem;
 }
-/*============NavBar=====================*/
+
+/* ---------- Navbar ---------- */
 .navbar {
   display: flex;
   justify-content: center;
@@ -69,15 +92,13 @@ main {
   height: 80px;
   width: 100%;
   position: sticky;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
   padding: 0 2rem;
   background: transparent;
   backdrop-filter: blur(10px);
   z-index: 100;
 }
-.navbar .logo img {
-  height: 40px;
-}
+
 .navbar-container {
   width: 100%;
   max-width: 1600px;
@@ -86,12 +107,21 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
+.navbar .logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Menu */
 .navbar-container .navbar-menu {
   display: flex;
   align-items: center;
   gap: 1.3rem;
   list-style: none;
 }
+
 .navbar-container .navbar-menu li a:not(.cta-link) {
   text-decoration: none;
   color: var(--font-color);
@@ -99,14 +129,17 @@ main {
   transition: color 0.3s ease;
   font-size: clamp(0.95rem, 1.2vw + 0.4rem, 1.125rem);
   letter-spacing: 0.2px;
+  position: relative;
 }
+
 .navbar-toggle {
   display: none;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: var(--size-10);
+  padding: 8px;
 }
+
 .bar {
   display: block;
   width: 25px;
@@ -115,25 +148,34 @@ main {
   background: var(--font-color);
   transition: all 0.3s ease-in-out;
 }
+
+/* CTA link in nav */
 .navbar-menu > li > .cta-link {
   text-decoration: none;
   color: var(--background-color);
-  letter-spacing: 1px;
   font-weight: 700;
-  letter-spacing: 1px;
   background-color: var(--primary-color);
   padding: 0.6rem 1.4rem;
   border-radius: 40px;
+  letter-spacing: 1px;
+  display: inline-block;
 }
+
+/* active indicator */
 .active-link::before {
   content: "";
   position: absolute;
-  bottom: 25px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
   height: 3px;
   width: 50px;
+  margin: 0 auto;
   border-radius: 2px;
-  background: var(--color2-d);
+  background: var(--color2-l);
 }
+
+/* Mobile navbar behaviour */
 @media (max-width: 800px) {
   .navbar {
     backdrop-filter: none;
@@ -145,20 +187,25 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    gap: 1.7rem !important;
-    width: 250px;
+    gap: 1.7rem;
+    width: 260px;
     height: 100vh;
     padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.74);
     backdrop-filter: blur(10px);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    overflow-y: auto;
   }
   .navbar-toggle {
     display: block;
     z-index: 101;
   }
+
   .navbar-container .navbar-menu.active {
     display: flex;
   }
+
   .navbar-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -169,7 +216,9 @@ main {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-@media (width<480px) {
+
+/* Very small screens */
+@media (max-width: 480px) {
   .navbar-container {
     padding: 0 1rem;
   }
@@ -179,130 +228,104 @@ main {
   .navbar-container .navbar-menu li a {
     font-size: 1rem;
   }
-  .advantages-image {
-    display: none;
+  main {
+    padding: 0 1rem;
   }
 }
 
-
-.container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-/* HEADER */
-/* Correções e pequenas melhorias para o header adaptado */
-
-/* garante logo com dimensões controladas */
-.navbar .logo img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-/* permite que o ::before da active-link posicione-se corretamente */
-.navbar-container .navbar-menu li a {
-  position: relative; /* necessário para pseudo-elementos */
-}
-
-/* substitui a variável inexistente por uma já definida */
-.active-link::before {
-  content: "";
-  position: absolute;
-  bottom: 8px; /* ajustado para responsividade */
-  left: 50%;
-  transform: translateX(-50%);
-  height: 3px;
-  width: 50px;
-  border-radius: 2px;
-  background: var(--secondary-color); /* trocar se preferir outro indicador */
-}
-
-/* acessibilidade: menu aberto (visível no mobile) */
-.navbar-container .navbar-menu.active {
-  display: flex;
-  /* reduzir risco de override inesperado */
-}
-
-/* pequenas melhorias: foco visível */
-.navbar-container .navbar-menu a:focus {
+/* Focus styles for accessibility */
+.navbar-container .navbar-menu a:focus,
+.navbar-toggle:focus {
   outline: 3px solid rgba(76, 175, 80, 0.18);
   outline-offset: 4px;
 }
 
-/* garante que o botão toggle seja visível em telas pequenas */
-.navbar-toggle {
-  background: transparent;
-  border: 0;
-  padding: 8px;
+/* ---------- Container utility ---------- */
+.container {
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
-/* (mantive suas media queries; estas regras são apenas complementares) */
-
-/* HERO */
+/* ---------- HERO ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: var(--gap);
+  grid-template-columns: 1fr minmax(220px, 40%);
+  gap: var(--gap, 1.25rem);
+  margin-top: var(--gap-2);
   align-items: center;
-  padding: 3.25rem 0;
-  border-radius: 50px;
+  padding: var(--gap-2);
+  border-radius: 24px;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  padding: var(--gap-2);
+  overflow: visible;
 }
+
 .hero-left {
   max-width: 62ch;
+  word-break: break-word;
 }
+
 .hero-title {
   font-size: clamp(1.6rem, 3.6vw, 2.6rem);
   line-height: 1.02;
   margin: 0 0 0.6rem;
-  color: #071127;
+  color: var(--font-color);
   font-weight: 800;
+  font-family: var(--font-title);
 }
+
 .hero-sub {
   color: var(--muted);
   margin: 0 0 1rem;
   font-weight: 300;
 }
+
 .hero-ctas {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin: 1.2rem 0;
 }
+
 .btn-primary,
 .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  border-radius: 40px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.18s ease;
   cursor: pointer;
-}
-.btn-primary {
-  background: var(--primary-cqolor);
-  color: #021;
-  box-shadow: 0 8px 30px rgba(124, 92, 255, 0.12);
-}
-.btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px rgba(124, 92, 255, 0.14);
-}
-.btn-outline {
-  border: 1px solid rgba(2, 8, 23, 0.575);
-  background: transparent;
-  color: #111;
-}
-.btn-outline:hover {
-  background: rgba(2, 8, 23, 0.03);
-  transform: translateY(-3px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: 0 8px 30px rgba(124, 92, 255, 0.1);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(124, 92, 255, 0.12);
+  outline: none;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background: rgba(2, 8, 23, 0.03);
+  transform: translateY(-2px);
+}
+
+/* features list */
 .hero-features {
   list-style: none;
   padding: 0;
@@ -312,38 +335,49 @@ main {
   color: var(--muted);
   font-weight: 400;
 }
+
+/* visual area */
+.hero-visual {
+  width: 100%;
+  display: block;
+}
 .hero-visual img {
   width: 100%;
-  height: 400px;
+  height: auto;
+  max-height: 420px;
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
   box-shadow: 0 18px 60px rgba(8, 10, 18, 0.06);
+  display: block;
 }
-/*hello fa*/
-/* SERVICES */
+
+/* ---------- SERVICES ---------- */
 .services {
   padding: 2rem 0;
 }
+
 .services h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--gap-4);
   font-family: var(--font-title);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1;
   letter-spacing: 1px;
-  margin-bottom: var(--gap-4);
   color: var(--font-color);
 }
+
 .services .lead {
   color: var(--muted);
   margin: 0 0 1rem;
 }
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
+
 .service {
   background: #fff;
   padding: 1.1rem;
@@ -352,11 +386,13 @@ main {
   color: #111;
   transition: transform 0.18s ease;
 }
-.service:hover {
+
+.service:hover,
+.service:focus-within {
   transform: translateY(-6px);
 }
 
-/* WHY */
+/* ---------- WHY ---------- */
 .why {
   padding: 2rem 0;
 }
@@ -378,7 +414,7 @@ main {
   margin-bottom: 0.45rem;
 }
 
-/* PORTFOLIO */
+/* ---------- PORTFOLIO ---------- */
 .portfolio {
   padding: 2rem 0;
 }
@@ -387,19 +423,19 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-.portfolio-title {
-}
+
 .proj {
   display: block;
   background: #fff;
   border-radius: 12px;
-  border: 1px solid var(--dark-color);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(2, 6, 23, 0.06);
   text-decoration: none;
   color: inherit;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
+
 .proj img {
   width: 100%;
   height: 200px;
@@ -409,12 +445,14 @@ main {
 .proj-meta {
   padding: 1rem;
 }
-.proj:hover {
+
+.proj:hover,
+.proj:focus {
   transform: translateY(-8px);
   box-shadow: 0 30px 80px rgba(2, 6, 23, 0.09);
 }
 
-/* PROCESS */
+/* ---------- PROCESS ---------- */
 .process {
   padding: 2rem 0;
 }
@@ -435,7 +473,7 @@ main {
   font-weight: 500;
 }
 
-/* CTA */
+/* ---------- CTA ---------- */
 .cta {
   padding: 2.25rem 0;
   background: linear-gradient(
@@ -460,68 +498,22 @@ main {
 .cta-actions {
   display: flex;
   gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
-/* FOOTER */
-.site-footer {
-  padding: 2rem 0;
-  margin-top: 2rem;
-  background: transparent;
-}
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(2, 8, 23, 0.04);
-}
-.brand-foot .brand {
-  font-weight: 800;
-  text-decoration: none;
-  color: #111;
-}
-.site-footer small {
-  color: var(--muted);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1000px) {
-  .hero {
-    grid-template-columns: 1fr 320px;
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* On small screens stack CTA actions */
 @media (max-width: 720px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-  .hero-visual {
-    order: 2;
-  }
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  .header-inner {
-    gap: 0.6rem;
-  }
-  .main-nav .nav-list {
-    display: none;
-  }
   .cta-inner {
     flex-direction: column;
     align-items: stretch;
   }
 }
-:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  background: transparent;
 }
 
 .footer {
@@ -554,12 +546,10 @@ main {
   line-height: 1.7;
   color: #ddd;
 }
-
 .footer a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .footer a:hover {
   color: var(--primary-color);
 }
@@ -574,7 +564,6 @@ main {
   padding: 0;
   margin: 0;
 }
-
 .footer-links li,
 .footer-contact li {
   margin-bottom: 0.5rem;
@@ -584,7 +573,6 @@ main {
   display: flex;
   gap: 0.8rem;
 }
-
 .footer-social a {
   background-color: #222;
   padding: 0.5rem;
@@ -594,11 +582,9 @@ main {
   align-items: center;
   justify-content: center;
 }
-
 .footer-social a img {
   height: 24px;
 }
-
 .footer-social a:hover {
   background-color: var(--primary-color);
   transform: translateY(-3px);
@@ -628,3 +614,66 @@ main {
     justify-content: center;
   }
 }
+
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr minmax(220px, 40%);
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hero-visual {
+    order: 2;
+    width: 100%;
+  }
+  .hero-left {
+    order: 1;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-inner {
+    gap: 0.6rem;
+  }
+  .main-nav .nav-list {
+    display: none;
+  }
+}
+
+/* Focus outline fallback */
+:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Small diagnostic helper (remove in production if desired)
+   This ensures hero image won't cause horizontal overflow due to rounding
+*/
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* End of file */

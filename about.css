@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #4caf50;
+  --green: #4caf50;
   --secondary-color: #ff9800;
   --dark-color: #121212;
   --font-color: #333;
@@ -98,6 +98,10 @@ main {
   background-color: var(--primary-color);
   padding: 0.6rem 1.4rem;
   border-radius: 40px;
+}
+.navbar-menu > li > .cta-link img{
+ height: 25px;
+background-color: var();
 }
 .active-link::before{
 content: "";
@@ -547,13 +551,18 @@ background:var(--color2-l);
 
 .btn-ghost {
   background: transparent;
-  color: var(--font-color);
+  color: var(--green);
   letter-spacing: 1px;
   padding: 0.6rem 1rem;
   border-radius: 40px;
   font-weight: 700;
-  border: 1px solid rgba(0, 0, 0, 0.432);
+  border: 2px solid var(--green);
   text-decoration: none;
+  transition: background .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.btn-ghost:hover{
+background: var(--green);
+color: var(--white);
 }
 
 /* rodapé pequeno ajuste para a página */
@@ -699,4 +708,7 @@ background:var(--color2-l);
   gap: 1rem;
   align-items: center;
   justify-content: center;
+}
+@media (prefers-reduced-motion: reduce){
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
