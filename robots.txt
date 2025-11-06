@@ -1,0 +1,7 @@
+# robots.txt para EsmaDesign
+User-agent: *
+Disallow: /assets/
+Disallow: /node_modules/
+Disallow: /private/
+
+Sitemap: https://www.esmadesign.site/sitemap.xml

@@ -423,7 +423,38 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-
+.why #why-title {
+  margin-bottom: var(--gap-2);
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  color: var(--font-color);
+}
+.portfolio #portfolio-title {
+  text-align: center;
+  margin-bottom: var(--gap-2);
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--font-color);
+}
+.portfolio .lead {
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--muted);
+  margin: 0 0 2rem;
+}
+.process #process-title {
+  text-align: center;
+  margin-bottom: var(--gap-4);
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--font-color);
+}
 .proj {
   display: block;
   background: #fff;

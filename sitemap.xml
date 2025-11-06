@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://www.esmadesign.site/index.html</loc>
+    <lastmod>2025‑11‑06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Sobre -->
+  <url>
+    <loc>https://www.esmadesign.site/sobre.html</loc>
+    <lastmod>2025‑11‑06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Projetos -->
+  <url>
+    <loc>https://www.esmadesign.site/projetos.html</loc>
+    <lastmod>2025‑11‑06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Websites (serviço) -->
+  <url>
+    <loc>https://www.esmadesign.site/websites.html</loc>
+    <lastmod>2025‑11‑06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

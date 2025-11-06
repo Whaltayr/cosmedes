@@ -23,9 +23,9 @@
                 </button>
                 <ul class="navbar-menu">
                     <li><a href="index.html">Início</a></li>
-                    <li><a class="active-link" href="about.html" aria-current="page">Sobre</a></li>
+                    <li><a class="active-link" href="sobre.html" aria-current="page">Sobre</a></li>
                     <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="sites.html">Websites</a></li>
+                    <li><a href="websites.html">Websites</a></li>
                     <li><a class="cta-link" target="_blank" href="https://wa.me/244925866799">Fale Conosco </a></li>
                 </ul>
             </div>
@@ -52,8 +52,15 @@
                     </div>
 
                     <div class="about-visual" aria-hidden="true">
-                        <img src="assets/ins/Instagram_04.png" alt="Ilustração Cosme Design" class="about-visual-img"
+                        <link rel="preload" as="image" href="assets/img/inst-1.webp">
+                        <img la src="assets/img/inst-1.webp" alt="Ilustração Cosme Design" class="about-visual-img"
                             loading="lazy">
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const img = document.querySelector(".about-visual-img.lazyload");
+                                img.src = img.dataset.src;
+                            });
+                        </script>
                     </div>
                 </div>
 
