@@ -89,7 +89,7 @@
   }, { threshold: 0.12 });
 
   items.forEach((el, i) => {
-    el.style.setProperty('--delay', i * 60 + 'ms');
+    el.style.setProperty('--delay', i * 30 + 'ms');
     io.observe(el);
   });
 })();

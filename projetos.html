@@ -4,191 +4,187 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Projetos</title>
-        <link rel="shortcut icon" href="assets/img/logo1.png" type="image/x-icon">
+    <title>Projetos - Portfolio</title>
+    <link rel="shortcut icon" href="assets/img/logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="design.css">
     <link rel="stylesheet" href="variables.css">
 </head>
 
 <body>
-    <!-- optional: include your site navbar here -->
+    <!-- Navbar -->
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="index.html" class="logo"><img src="assets/img/Logo.png" alt=""></a>
+                <a href="index.html" class="logo"><img src="assets/img/Logo.png" alt="Logo"></a>
                 <button class="navbar-toggle">
-                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
                 <ul class="navbar-menu">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a class="active-link" href="projetos.html">Projetos</a></li>
                     <li><a href="websites.html">Websites</a></li>
-                        <li><a class="cta-link" target="_blank" href="https://wa.me/244925866799">Fale Conosco </a></li>
+                    <li><a class="cta-link" target="_blank" href="https://wa.me/244925866799">Fale Conosco</a></li>
                 </ul>
-
-
             </div>
         </nav>
     </header>
 
     <main class="container page-design">
+        <!-- Hero Section -->
         <section class="hero-portfolio">
             <div class="hero-inner">
                 <h1 class="hero-title">Design Gráfico — Portfólio</h1>
-                <p class="lead">Seleção de trabalhos: identidades, impressão, campanhas e peças digitais. Clique em um
-                    projeto para ver mais.</p>
+                <p class="lead">Seleção de trabalhos: identidades, impressão, campanhas e peças digitais. Clique em uma imagem para ver mais.</p>
             </div>
         </section>
 
-        <!-- FILTERS (optional) -->
+        <!-- Filters -->
         <section class="filters">
             <div class="filter-row">
                 <button class="filter-btn active" data-filter="*">Todos</button>
                 <button class="filter-btn" data-filter="identidade">Identidade</button>
                 <button class="filter-btn" data-filter="impresso">Impresso</button>
-
                 <button class="filter-btn" data-filter="post">Post</button>
-
             </div>
         </section>
 
-        <!-- GALLERY GRID -->
+        <!-- Gallery -->
         <section class="gallery" aria-label="Galeria de projetos">
-            <!-- each .item must have data-category and contains an img + caption -->
-            <!-- Replace src with your real project thumbnails -->
-            <article class="item" data-category="identidade">
-                <img src="assets/img/Consultas-gratis.webp" alt="Projeto 1 — Identidade" loading="lazy">
-                <div class="meta">
-                    <h3>Óptica Tulipa</h3>
-                    <p>Logotipo e aplicação</p>
+            
+            <!-- Project 1 -->
+            <div class="items-group" data-category="impresso">
+                <div class="img-container">
+                    <img src="assets/img/sales-faste1.webp" alt="Sales Fast - Imagem 1" loading="lazy">
+                    <img src="assets/img/sales-fast2.webp" alt="Sales Fast - Imagem 2" loading="lazy">
+                    <img src="assets/img/sales-fast3.webp" alt="Sales Fast - Imagem 3" loading="lazy">
                 </div>
-            </article>
-
-            <article class="item" data-category="post">
-                <img src="assets/img/pj-2.webp" alt="Projeto 2 — Flyer" loading="lazy">
-                <div class="meta">
-                    <h3>Auto-Marmindo</h3>
+                <div class="meta-container">
+                    <h3>Sales Fast</h3>
                     <p>Campanha impressa</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
                 </div>
-            </article>
-            <article class="item" data-category="post">
-                <img src="assets/img/slider-image-1.webp" alt="Projeto 3 — Banner" loading="lazy">
-                <div class="meta">
-                    <h3>Sale Fast</h3>
-                    <p>Peças digitais</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="items-group" data-category="impresso">
+                <div class="img-container">
+                    <img src="assets/img/Consultas-gratis.webp" alt="Ópticas Tulipa - Imagem 1" loading="lazy">
+                    <img src="assets/img/pj-7.webp" alt="Ópticas Tulipa - Imagem 2" loading="lazy">
+                    <img src="assets/img/pj-5.webp" alt="Ópticas Tulipa - Imagem 3" loading="lazy">
                 </div>
-            </article>
-
-
-
-            <article class="item" data-category="post">
-                <img src="assets/img/Post-1.webp" alt="Projeto 5 — Packaging" loading="lazy">
-                <div class="meta">
-                    <h3>Esma Store</h3>
-                    <p>Post</p>
+                <div class="meta-container">
+                    <h3>Ópticas Tulipa</h3>
+                    <p>Campanha impressa</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
                 </div>
-            </article>
+            </div>
 
-            <article class="item" data-category="post">
-                <img src="assets/img/pj-12.webp" alt="Projeto 6 — Brochura" loading="lazy">
-                <div class="meta">
-                    <h3>CARH</h3>
-                    <p>Material corporativo</p>
+            <!-- Project 3 -->
+            <div class="items-group" data-category="identidade">
+                <div class="img-container">
+                    <img src="assets/img/psb1.webp" alt="PSBusiness - Imagem 1" loading="lazy">
+                    <img src="assets/img/psb2.webp" alt="PSBusiness - Imagem 2" loading="lazy">
+                    <img src="assets/img/psb3.webp" alt="PSBusiness - Imagem 3" loading="lazy">
                 </div>
-            </article>
-
-            <article class="item" data-category="Identidade">
-                <img src="assets/img/pj-10.webp" alt="Projeto 7 — Banner" loading="lazy">
-                <div class="meta">
-                    <h3>Eco Viva</h3>
-                    <p>Identidade Logotipo</p>
-                </div>
-            </article>
-
-
-            <article class="item" data-category="post">
-                <img src="assets/img/pj-11.webp" alt="Projeto 8 — Banner" loading="lazy">
-                <div class="meta">
+                <div class="meta-container">
                     <h3>PSBusiness</h3>
-                    <p>Peças digitais</p>
+                    <p>Identidade Visual</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
                 </div>
-            </article>
-            <article class="item" data-category="logo">
-                <img src="assets/img/Sky-motor-presentation_02.png" alt="Projeto 9 — Banner" loading="lazy">
-                <div class="meta">
-                    <h3>Sky motor</h3>
-                    <p>Peças digitais</p>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="items-group" data-category="post">
+                <div class="img-container">
+                    <img src="assets/img/auto-marmindo.webp" alt="Auto-Marmindo - Imagem 1" loading="lazy">
+                    <img src="assets/img/auto-marmindo2.webp" alt="Auto-Marmindo - Imagem 2" loading="lazy">
+                    <img src="assets/img/auto-marmindo3.webp" alt="Auto-Marmindo - Imagem 3" loading="lazy">
                 </div>
-            </article>
-            <article class="item" data-category="logo">
-                <img src="assets/img/post-2.webp" alt="Projeto 10 — Banner" loading="lazy">
-                <div class="meta">
-                    <h3>Banner — Campanha</h3>
-                    <p>Peças digitais</p>
-                </div>
-            </article>
-            <article class="item" data-category="logo">
-                <img src="assets/img/pj-8.webp" alt="Projeto 11 — Banner"   loading="lazy">
-                <div class="meta">
-                    <h3>Esma Store</h3>
-                    <p>Peças digitais</p>
-                </div>
-            </article>
-            <article class="item" data-category="identidade">
-                <img src="assets/img/pj-5.webp" alt="Projeto 12 — Banner"   loading="lazy">
-                <div class="meta">
-                    <h3>Ópticas Tulipa</h3>
-                    <p>Peças digitais</p>
-                </div>
-            </article>
-            <article class="item" data-category="digital">
-                <img src="assets/img/pj-7.webp" alt="Projeto 13 — Banner"  loading="lazy">
-                <div class="meta">
-                    <h3>Ópticas Tulipa</h3>
-                    <p>Peças digitais</p>
-                </div>
-            </article>
-            <article class="item" data-category="digital">
-                <img src="assets/img/pj-9.webp" alt="Projeto 14 — Banner" loading="lazy">
-                <div class="meta">
-                    <h3>Central Automóvel</h3>
-                    <p>Peças digitais</p>
-                </div>
-            </article>
-            <article class="item" data-category="impresso">
-                <img src="assets/img/IMG_1164.JPG" alt="Projeto 15 — Banner" loading="lazy">
-                <div class="meta">
+                <div class="meta-container">
                     <h3>Auto-Marmindo</h3>
-                    <p>Peças digitais</p>
+                    <p>Post para redes sociais</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
                 </div>
-            </article>
-            <article class="item" data-category="post">
-                <img src="assets/img/pj-6.webp" alt="Projeto 16 — Banner"   loading="lazy">
-                <div class="meta">
-                    <h3>SALES FAST</h3>
-                    <p>Peças digitais</p>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="items-group" data-category="impresso">
+                <div class="img-container">
+                    <img src="assets/img/esma-store-1.webp" alt="Esma Store - Imagem 1" loading="lazy">
+                    <img src="assets/img/esma-store-2.webp" alt="Esma Store - Imagem 2" loading="lazy">
+                    <img src="assets/img/esma-store3.webp" alt="Esma Store - Imagem 3" loading="lazy">
                 </div>
-            </article>
+                <div class="meta-container">
+                    <h3>Esma Store</h3>
+                    <p>Campanha impressa</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="items-group" data-category="identidade">
+                <div class="img-container">
+                    <img src="assets/img/sky-motor1.webp" alt="Sky Motor - Imagem 1" loading="lazy">
+                    <img src="assets/img/sky-motor2.webp" alt="Sky Motor - Imagem 2" loading="lazy">
+                    <img src="assets/img/sky-motor3.webp" alt="Sky Motor - Imagem 3" loading="lazy">
+                </div>
+                <div class="meta-container">
+                    <h3>Sky Motor</h3>
+                    <p>Identidade Visual</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="items-group" data-category="post">
+                <div class="img-container">
+                    <img src="assets/img/inst.webp" alt="Tabernáculo - Imagem 1" loading="lazy">
+                    <img src="assets/img/inst-1.webp" alt="Tabernáculo - Imagem 2" loading="lazy">
+                    <img src="assets/img/inst2.webp" alt="Tabernáculo - Imagem 3" loading="lazy">
+                </div>
+                <div class="meta-container">
+                    <h3>Tabernáculo Internacional Da Fé</h3>
+                    <p>Post para redes sociais</p>
+                    <button class="view-gallery-btn">Ver galeria completa →</button>
+                </div>
+            </div>
+
         </section>
 
-        <!-- LIGHTBOX (hidden initially) -->
-        <div id="lightbox" aria-hidden="true">
-            <button id="lb-close" aria-label="Fechar">×</button>
-            <button id="lb-prev" class="nav" aria-label="Anterior">‹</button>
-            <button id="lb-next" class="nav" aria-label="Próximo">›</button>
-            <div id="lb-stage" role="dialog" aria-modal="true">
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+            <button id="lb-close" class="lightbox-btn lb-close" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button id="lb-prev" class="lightbox-btn lb-prev" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button id="lb-next" class="lightbox-btn lb-next" aria-label="Próximo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div id="lb-stage">
                 <img id="lb-image" src="" alt="">
-                <div id="lb-caption"></div>
             </div>
+            <div id="lb-counter" class="lb-counter"></div>
         </div>
 
     </main>
 
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="nav.js"></script>
-    <script src="gallery.js"></script>
-
+    <script src="gallery2.js"></script>
 
 </body>
 
